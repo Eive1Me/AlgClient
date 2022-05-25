@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import {AlgList} from "./components/AlgList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AlgList></AlgList>
     </div>
+  );
+}
+
+function BoxT() {
+  return (
+      <header>
+        <h1>Алгоритм</h1>
+        <p>Текст алгоритма</p>
+        <button>Кнопка</button>
+      </header>
   );
 }
 
