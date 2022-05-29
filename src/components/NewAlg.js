@@ -163,25 +163,25 @@ export class NewAlg extends React.Component {
     }
 
     componentDidMount() {
-        let newState = this.state
-        axios.get("http://localhost:8080/dict/work_type").then(res => {
-            newState.work_type_list = res.data
-            axios.get("http://localhost:8080/client").then(res => {
-                newState.client_list = res.data
-                axios.get("http://localhost:8080/dict/accessory_type").then(res => {
-                    newState.accessory_type_list = res.data
-                    axios.get("http://localhost:8080/dict/clothing_type").then(res => {
-                        newState.clothing_type_list = res.data
-                        this.setState(newState)
-                    })
-                })
-            })
-        })
+        // let newState = this.state
+        // axios.get("http://localhost:8080/dict/work_type").then(res => {
+        //     newState.work_type_list = res.data
+        //     axios.get("http://localhost:8080/client").then(res => {
+        //         newState.client_list = res.data
+        //         axios.get("http://localhost:8080/dict/accessory_type").then(res => {
+        //             newState.accessory_type_list = res.data
+        //             axios.get("http://localhost:8080/dict/clothing_type").then(res => {
+        //                 newState.clothing_type_list = res.data
+        //                 this.setState(newState)
+        //             })
+        //         })
+        //     })
+        // })
     }
 
     render() {
-        return (
-            <div>
+        return (<div className="na-page">
+            <div className="new-div">
                 <h2 className="page-title">Новый алгоритм</h2>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <label>Название алгоритма</label>
@@ -189,32 +189,31 @@ export class NewAlg extends React.Component {
                     <datalist id="client">
                         {this.state.client_list.map(client => <option value={client.name} className="NewOrder-option">{client.phoneNumber}</option>)}
                     </datalist>
-                    <label>Номер телефона клиента</label>
+                    <label>Точность</label>
                     <input required id="phone-number-input" list="phoneNumber" name="phoneNumber" onChange={(e) => this.updateData(e)}/>
                     <datalist id="phoneNumber">
                         {this.state.client_list.map(client => <option value={client.phoneNumber} className="NewOrder-option">{client.name}</option>)}
                     </datalist>
-                    <label>Одежда</label>
+                    <label>Линейность</label>
                     <input required id="clothing-type-input" list="clothing-type" name="clothing-type" onChange={(e) => this.updateData(e)}/>
                     <datalist id="clothing-type">
                         {this.state.clothing_type_list.map(work => <option value={work.name} className="NewOrder-option"/>)}
                     </datalist>
-                    <label>Работа</label>
+                    <label>Время обучения</label>
                     <input required id="work-type-input" list="work-type" name="work-type" onChange={(e) => this.updateData(e)}/>
                     <datalist id="work-type">
                         {this.state.work_type_list.map(work => <option value={work.name} className="NewOrder-option"/>)}
                     </datalist>
-                    <label>Доп. фурнитура</label>
+                    <label>Количество параметров</label>
                     <input id="accessory-type-input" list="accessory-type" name="accessory-type-list" onChange={(e) => this.updateData(e)}/>
                     <datalist id="accessory-type">
                         {this.state.accessory_type_list.map(clothing => <option value={clothing.name} className="NewOrder-option"/>)}
                     </datalist>
-                    <label>Сумма <input id="payment" type="number" required={true} onChange={(e) => this.updateData(e)}/></label>
-                    <label>Предоплата <input id="prepayment" type="number"  onChange={(e) => this.updateData(e)}/></label>
-                    <label>Дедлайн <input id="deadline" required type="date" onChange={(e) => this.updateData(e)}/></label>
+                    <label>Принцип работы <input id="payment" type="number" required={true} onChange={(e) => this.updateData(e)}/></label>
+                    <label>Принцип использования <input id="prepayment" type="number"  onChange={(e) => this.updateData(e)}/></label>
                     <input type="submit" value="Создать заказ"/>
                 </form>
-            </div>
+            </div></div>
         );
     };
 }

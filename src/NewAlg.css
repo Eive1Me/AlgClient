@@ -5,3 +5,24 @@ label, input {
 form > label, input {
     display: block;
 }
+
+.new-div{
+    margin: 15px 20px;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #C95A49;
+    background-image: url("https://i.imgur.com/lB3DV3h.png");
+    background-size: cover;
+}
+
+.na-page{
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url("https://i.imgur.com/NEEpvQY.gif");
+    background-blend-mode: screen;
+}
