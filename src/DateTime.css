@@ -1,0 +1,14 @@
+.DateTime-time {
+    font-size: 32px;
+    font-family: "Montserrat Medium";
+}
+
+.DateTime-date {
+    font-size: 14px;
+}
+
+.DateTime-container {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}

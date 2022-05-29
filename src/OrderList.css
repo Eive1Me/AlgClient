@@ -1,0 +1,138 @@
+.OrderList-orderlist-item {
+    font-size: 16px;
+    /*border: 1px solid red;*/
+    padding: 13px 5%;
+    border: 2px solid #6EAEA1;
+    /*background: #6EAEA1;*/
+    box-shadow: 0 0 1px #C95A49;
+    margin: 5px 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-container, .orderlist-item-btn-container {
+    display: inline;
+}
+
+.orderlist-item-btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.order-item-field {
+    vertical-align: center;
+    margin-right: 20px;
+}
+
+.order-id {
+    font-size: 30px;
+    font-family: "Montserrat Medium"
+}
+
+.edit-container {
+    position: absolute;
+    right: 10%;
+    width: 40%;
+    height: 80%;
+    background: #edfcff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #C95A49;
+    padding: 1%;
+
+    overflow: visible;
+}
+
+.editActive {
+    border: 1px solid red;
+}
+
+.edit-id {
+    font-size: 34px;
+}
+
+.block-1 {
+    padding: 5px;
+    background: #B0E0E6;
+}
+
+.edit-form {
+    padding: 1%;
+    margin-top: 10px;
+}
+
+.edit-form-input {
+    margin-bottom: 15px;
+}
+
+.Orderlist-item {
+    display: table;
+    position: initial;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    background: #C95A49;
+    /*background: linear-gradient(to top, #e9edc9, #faedcd);*/
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.edit-btn,.del-btn,.cancel-btn{
+    background: #C95A49;
+    /*background: linear-gradient(to top, #e9edc9, #faedcd);*/
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    opacity: 0.6;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.edit-btn:hover,.del-btn:hover,input[type="submit"]:hover,.cancel-btn:hover{
+    opacity: 1;
+}
+
+.header{
+    font-size: 24px;
+    letter-spacing: 3px;
+    top: 50%;
+    color: #002147;
+    text-shadow:
+            1px 1px 0px #e9edc9,
+            2px 2px 0px #d4a373;
+}
+
+.back{
+    background: #B0E0E6;
+    margin: -8px -1px;
+    /*background: linear-gradient(to top, #B0E0E6 , #ffffff);*/
+}
+
+.un-list{
+    margin-left: -10px;
+}
+
+::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #6EAEA1; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6b8d62; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid #002147; /* creates padding around scroll thumb */
+}

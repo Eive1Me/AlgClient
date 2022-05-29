@@ -1,0 +1,72 @@
+.home-container {
+    display: table;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url("https://i.imgur.com/lB3DV3h.png");
+    /*background: #B0E0E6;*/
+    background-size: cover;
+    padding: 80px 10%;
+}
+
+.orders-for-today-container {
+    background: rgba(255, 255,255, 0.7);
+    padding: 10px;
+    border-radius: 20px;
+    height: 90%;
+    width: 50%;
+    box-shadow: 0 0 10px #ccd5ae;
+    overflow: auto;
+}
+
+.home-alglist-item {
+    font-size: 20px;
+    border: 1px solid #C95A49;
+    padding: 16px 10%;
+    //background: #C95A49;
+    color: #002147;
+    /*background: linear-gradient(to top, #e9edc9, #faedcd);*/
+    box-shadow: 0 0 1px #264653;
+    margin: 10px 0;
+    letter-spacing: 3px;
+    top: 50%;
+    /*text-shadow:*/
+    /*        1px 1px 0px #B0E0E6,*/
+    /*        1.5px 1.5px 0px #002147;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.order-item-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    width: 100%;
+}
+.order-phone {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    font-size: 12px;
+    margin: 0;
+    width: 100%;
+}
+
+.app-desc{
+    text-align: center;
+    width: 100%;
+    color: #002147;
+    font-size: 24px;
+    letter-spacing: 3px;
+    top: 50%;
+    text-shadow:
+    1px 1px 0px #e9edc9,
+    2px 2px 0px #d4a373;
+}
+
+.eue{
+    margin-bottom: 80px;
+}

@@ -1,0 +1,7 @@
+label, input {
+    /*display: inline;*/
+}
+
+form > label, input {
+    display: block;
+}

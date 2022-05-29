@@ -1,0 +1,45 @@
+
+.favourites-span {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    top: 50%;
+    color: #002147;
+}
+
+.favourites-container{
+    /*padding-top: 80px;*/
+}
+
+.edit-form-input {
+    margin-bottom: 15px;
+    background: #6EAEA1;
+}
+
+.edit-form {
+    padding: 1%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #C95A49;
+}
+
+.submit-btn{
+    background: #C95A49;
+    /*background: linear-gradient(to top, #e9edc9, #faedcd);*/
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    opacity: 0.6;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.submit-btn:hover{
+    opacity: 1;
+}
