@@ -3,11 +3,9 @@ import '../Home.css';
 import React from 'react';
 import {Auth} from "./Auth";
 import {Favourites} from "./Favourites";
-import {DateTime} from "./DateTime";
 import {  BrowserRouter as Router,  Route, Link} from "react-router-dom";
 import {withRouter} from 'react-router-dom';
 import axios from "axios";
-import * as fallbackData from "../data/fallback_data";
 
 class Home extends React.Component {
     constructor(props) {

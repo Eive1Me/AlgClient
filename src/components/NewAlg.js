@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import '../NewOrder.css';
-import * as fallbackData from '../data/fallback_data';
+import '../NewAlg.css';
 
 export class NewAlg extends React.Component {
     state = {
@@ -27,21 +26,6 @@ export class NewAlg extends React.Component {
 
     }
 
-    //from yyyy-mm-dd
-    //to dd-mm-yyyy
-    formatDate(dateStr) {
-        let date = dateStr.split("-")
-        // let day = 1 + date[2]
-
-        return date[2] + "-" + date[1] + "-" + date[0]
-    }
-
-    //the way around
-    formatDateY(dateStr) {
-        let date = dateStr.split("-")
-        return date[2] + "-" + date[1] + "-" + date[0]
-    }
-
     updateData(e) {
         let newState = this.state
         switch(e.target.id) {
@@ -63,11 +47,6 @@ export class NewAlg extends React.Component {
                 break
         }
         this.setState(newState)
-    }
-
-    formatDateAdd(str) {
-        let day = Number(str.split("-")[0]) + 1
-        return str.replace(str.split("-")[0], day)
     }
 
     handleSubmit(e) {
@@ -129,8 +108,8 @@ export class NewAlg extends React.Component {
     }
 
     loadAccessories(order) {
-        if (this.state.newOrder.accessoryName.length > 0) {
-            axios.get("http://localhost:8080/dict/accessory_type?name=" + this.state.newOrder.accessoryName)
+        if (this.state.newAlg.accessoryName.length > 0) {
+            axios.get("http://localhost:8080/dict/accessory_type?name=" + this.state.newAlg.accessoryName)
                 .then(res => {
                     if (res.status === 200) {
                         order.accessoryId = res.data.id
@@ -158,8 +137,8 @@ export class NewAlg extends React.Component {
 
     loadClient(order) {
         let client = {}
-        client = this.state.client_list.find(e => e.name === this.state.newOrder.client.name
-            && e.phoneNumber === this.state.newOrder.client.phoneNumber)
+        client = this.state.client_list.find(e => e.name === this.state.newAlg.client.name
+            && e.phoneNumber === this.state.newAlg.client.phoneNumber)
         if (client !== undefined) {
             order.clientId = client.id
 
@@ -167,8 +146,8 @@ export class NewAlg extends React.Component {
         }
         else {
             axios.post("http://localhost:8080/client", {
-                name: this.state.newOrder.client.name,
-                phoneNumber: this.state.newOrder.client.phoneNumber
+                name: this.state.newAlg.client.name,
+                phoneNumber: this.state.newAlg.client.phoneNumber
             })
                 .then( res => {
                     console.log(res)

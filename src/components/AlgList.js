@@ -1,4 +1,4 @@
-import "../OrderList.css"
+import "../AlgList.css"
 import React from 'react';
 import axios from 'axios';
 import useCollapse from 'react-collapsed';
