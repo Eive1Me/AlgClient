@@ -4,16 +4,18 @@ import axios from 'axios';
 import useCollapse from 'react-collapsed';
 
 export class AlgList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     state = {
         filter: "",
         algList: [],
         activeAlg: null,
     }
-    role = "user";
+    role = "";
 
     componentDidMount() {
         let algList = []
-
         axios.get(`http://localhost:9090/algorithms`)
             .then(res => {
                 algList = res.data

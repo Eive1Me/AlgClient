@@ -7,7 +7,7 @@ import {NewAlg} from "./NewAlg";
 import {DateTime} from "./DateTime";
 
 class App extends React.Component {
-    role = "admin"
+    role = ""
     login = ""
     userId = ""
     fav = []
@@ -17,17 +17,18 @@ class App extends React.Component {
     }
 
     setRole(data) {
-        this.
-        this.login = data.login;
-        this.role = data.role;
+        // this.
+        // this.login = data.login;
+        console.log(data)
+        this.role = data;
         this.forceUpdate()
     }
 
     logOut(){
         if (this.role !== "none"){
             this.role = "none";
-            this.forceUpdate()
         }
+        this.forceUpdate()
     }
 
     render() {
@@ -39,7 +40,7 @@ class App extends React.Component {
                 <ul className="App-nav-list">
                     {(this.role !== "none") ?
                     <li className="App-nav-item"> <div className="app-log"> <span>login</span>
-                        <button onClick={() => this.logOut()}>{(this.role !== "none") ? "Выйти" : ""}</button></div></li> : ""}
+                        <button className="logout-btn" onClick={() => this.logOut()}>{(this.role !== "none") ? "Выйти" : ""}</button></div></li> : ""}
                     <li className="App-nav-item">
                         <NavLink activeClassName="selected" to="/home">Главная</NavLink></li>
                     <li className="App-nav-item">
