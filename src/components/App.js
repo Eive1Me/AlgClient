@@ -7,7 +7,7 @@ import {NewAlg} from "./NewAlg";
 import {DateTime} from "./DateTime";
 
 class App extends React.Component {
-    role = ""
+    role = "none"
     login = ""
     userId = ""
     fav = []
@@ -20,7 +20,9 @@ class App extends React.Component {
         // this.
         // this.login = data.login;
         console.log(data)
-        this.role = data;
+        this.login = data.login
+        this.userId = data.id
+        this.role = data.role;
         this.forceUpdate()
     }
 
@@ -39,7 +41,7 @@ class App extends React.Component {
                 <header>
                 <ul className="App-nav-list">
                     {(this.role !== "none") ?
-                    <li className="App-nav-item"> <div className="app-log"> <span>login</span>
+                    <li className="App-nav-item"> <div className="app-log"> <span>{this.login}</span>
                         <button className="logout-btn" onClick={() => this.logOut()}>{(this.role !== "none") ? "Выйти" : ""}</button></div></li> : ""}
                     <li className="App-nav-item">
                         <NavLink activeClassName="selected" to="/home">Главная</NavLink></li>
@@ -55,7 +57,7 @@ class App extends React.Component {
             </header>
                 <main>
                 <Switch>
-                        <Route path='/home' render={(props) => <Home {...props} func={this.pull_data} role = {this.role} />} />
+                        <Route path='/home' render={(props) => <Home {...props} func={this.pull_data} role = {this.role} usId = {this.userId} />} />
                         <Route path='/algorithms' render={(props) => <AlgList {...props} role={this.role} />} /> {/*component={AlgList}*/}
                         <Route path='/new_algorithm' render={(props) => <NewAlg {...props} role={this.role} />} />
                         <Route path='/' exact component={Home} />

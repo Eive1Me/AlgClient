@@ -7,9 +7,12 @@ export class Favourites extends React.Component {
         super(props);
     }
     state={
-        algList: []
+        algList: [],
+        favList: [],
+        user: {}
     }
     role = "none";
+    usId = "";
 
     componentDidMount() {
         this.loadData()
@@ -18,22 +21,39 @@ export class Favourites extends React.Component {
     loadData() {
         let newState = this.state
         let algList = []
+        let favList = []
+        let favIds = []
         let getRequest = `http://localhost:9090/algorithms?expand`
         axios.get(getRequest)
             .then(res => {
-                algList = res.data
-                let list = algList.slice(0,3)
-                console.log(list)
-                newState.algList = list
-                this.setState(newState)
-            })
+                axios.get(`http://localhost:9090/favourites?expand`).then( fav => {
+                    favList = fav.data
+                    algList = res.data
+                    // console.log(favList)
+                    // console.log(algList)
+                    favList.map( f => {
+                        //console.log(f.name)
+                        algList.map(alg => {
+                            console.log(f.us === this.props.usId)
+                            if (f.us === this.props.usId)
+                                if (alg.id === f.name)
+                                    favIds.push(alg)
+                        })
+                    })
+                    let list = favIds
+                    newState.favList = list
+                    this.setState(newState)
+                    console.log(this.state.favList)
+                })
+        })
+
     }
 
     render() {
         return <div className="favourites-container">
             <span className="favourites-span">Избранное</span>
             <ul>
-                {this.state.algList.map(alg => <li className="home-alglist-item" key={"home" + alg.id}>
+                {this.state.favList.map(alg => <li className="home-alglist-item" key={"home" + alg.id}>
                     <span className="order-item-field alg-name">{alg.name}</span>
                 </li>)}
             </ul>

@@ -22,6 +22,7 @@ class Home extends React.Component {
     }
 
     role = "";
+    usId = "";
     func;
 
     tempProps;
@@ -67,7 +68,7 @@ class Home extends React.Component {
                     который соответствует вашим потребностям, с ним вы сможете получить более точные результаты,
                     более точные прогнозы и сократить время обучения.</span>
                 </div>
-                {(this.props.role === "none") ? <Auth func = {this.props.func}/> : <Favourites/>}
+                {(this.props.role === "none") ? <Auth func = {this.props.func}/> : <Favourites usId = {this.props.usId}/>}
             </div>
         );
     }

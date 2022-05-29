@@ -39,7 +39,7 @@ export class Auth extends React.Component{
                 this.setState(newState)
                 this.setRole(this.state.user.role)
                 console.log(newState.user)
-                this.props.func(this.tempProps.role)
+                this.props.func(this.state.user)
             })
 
     }
