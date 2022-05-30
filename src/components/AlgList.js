@@ -10,6 +10,7 @@ export class AlgList extends React.Component {
     state = {
         filter: "",
         algList: [],
+        filtList: [],
         activeAlg: null,
     }
     role = "";
@@ -22,9 +23,31 @@ export class AlgList extends React.Component {
                 console.log(algList)
                 let newState = this.state
                 newState.algList = algList
+                newState.filtList = algList
                 this.setState(newState)
                 console.log(this.props.role)
             })
+    }
+
+    filter(e){
+        if (e.target.value !== ""){
+            let newState = this.state
+            let filtList = []
+            let searchWord = e.target.value
+            this.state.algList.map(a => {
+                if (a.name.includes(searchWord)) {
+                    console.log("working")
+                    filtList.push(a)
+                }
+            })
+            newState.filtList = filtList
+            this.setState(newState)
+
+        } else {
+            let newState = this.state
+            newState.filtList = this.state.algList
+            this.setState(newState)
+        }
     }
 
     loadData() {
@@ -35,6 +58,7 @@ export class AlgList extends React.Component {
                 algList = res.data
                 let newState = this.state
                 newState.algList = algList
+                newState.filtList = algList
                 this.setState(newState)
             })
     }
@@ -47,21 +71,6 @@ export class AlgList extends React.Component {
 
             this.loadData()
         }
-    }
-
-    //from yyyy-mm-dd
-    //to dd-mm-yyyy
-    formatDate(dateStr) {
-        let date = dateStr.split("-")
-        let day = 1 + date[2]
-
-        return day + "-" + date[1] + "-" + date[0]
-    }
-
-    //the way around
-    formatDateY(dateStr) {
-        let date = dateStr.split("-")
-        return date[2] + "-" + date[1] + "-" + date[0]
     }
 
     deleteOrder(id) {
@@ -151,7 +160,7 @@ export class AlgList extends React.Component {
 
     render() {
         return (
-            <div className="back">
+            <div className="back"> <div className="search-form"> <input className="search" type="search" onChange={event => this.filter(event)}/></div>
                 {(this.props.role === "admin") ?
                     <div> {(this.state.activeAlg !== null) ?
                         <div className="edit-container">
@@ -186,7 +195,7 @@ export class AlgList extends React.Component {
                  : "" }
                 <ul className="un-list">
 
-                    {this.state.algList.map(alg => <li key={"list" + alg.id} className={"OrderList-orderlist-item " + (this.state.activeAlg === alg.id ? "editActive" : "")}>
+                    {this.state.filtList.map(alg => <li key={"list" + alg.id} className={"OrderList-orderlist-item " + (this.state.activeAlg === alg.id ? "editActive" : "")}>
                         <Collapsible name = {alg.name}><div className="content-container">
                             <br/>
                             <span className="order-item-field order-item Orderlist-item">Точность: {alg.accuracy}</span> <br/>
