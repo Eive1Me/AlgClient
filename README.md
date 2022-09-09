@@ -1,4 +1,33 @@
-# Getting Started with Create React App
+# Клиентская часть курсовой работы по теме "Подбор алгоритмов в области Искусственного Интеллекта"
+## _React JS_
+
+![Java](https://img.shields.io/badge/Library-React_JS-informational?style=flat-square&logo=react&logoColor=white&color=blue) ![PostrgeSQL](https://img.shields.io/badge/DataBase-PostgreSQL-informational?style=flat-square&logo=postgresql&logoColor=white&color=blue) ![IntellijIDEA](https://img.shields.io/badge/Editor-WebStorm-informational?style=flat-square&logo=webstorm&logoColor=white&color=blue) 
+
+## Организация данных
+
+Для удобства в управлении клиентская часть приложения разделена на модули:
+- Components  
+Содержит отдельные компоненты интерфейса приложения, файлы .js описывающие взаимодействия со страницей. 
+- Data  
+Содержит дополнительные данные для приложения, например фон background.png. 
+- Styles 
+Модуль содержит CSS стили страниц, предназначен для изменения внешнего вида интерфейса.  
+
+## Описание интерфейса
+- Вверху каждой страницы будет расположена панель навигации по сайту, логотип с ссылкой на главную страницу и переход профиль пользователя/авторизация. 
+- В профиле пользователя будет представлен логин, возможность смены пароля и выход из системы. 
+- На главной странице будет представлен каталог алгоритмов с возможностью поиска по ключевым словам, слева будет панель с алгоритмами, добавленными пользователем в избранное. 
+- У пользователя, авторизовавшегося в роли администратора в верхней части главной страницы будет кнопка для добавления новых алгоритмов, переводящая на страницу редактирования алгоритма. 
+- Страница редактирования/добавления алгоритма будет содержать все изменяемые атрибуты алгоритма, кнопки сохранения и удаления.
+
+Каталог алгоритмов представлен в виде карточек с названием и аннотацией, нажатие на которые переводит пользователя на страницу алгоритма с более подробной информацией. Для обычного пользователя на этой странице будет представлена вся информация об алгоритме и кнопка «Добавить в избранное». У администратора будет возможность редактирования и удаления алгоритма. 
+
+Далее на рисунках представлены примеры описанного интерфейса. 
+
+![image](https://user-images.githubusercontent.com/83867541/189419117-0e92b085-b714-4eaf-a028-e9e46fdc81a9.png)
+![image](https://user-images.githubusercontent.com/83867541/189419129-fe515744-2110-44c9-880b-670561f6f80e.png)
+
+# Стандартный скрипт апуска React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -38,33 +67,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
